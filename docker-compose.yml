@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  api:
+    build: ./apps/api
+    ports: ["4000:4000"]
+    env_file: .env
+    depends_on: [redis, db]
+
+  web:
+    build: ./apps/web
+    ports: ["3000:3000"]
+    depends_on: [api]
+
+  redis:
+    image: redis:7-alpine
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: soladb
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: soladb

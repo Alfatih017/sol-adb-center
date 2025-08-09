@@ -1,0 +1,16 @@
+{
+  "name": "@sol-adb/api",
+  "scripts": {
+    "start:dev": "nest start --watch",
+    "build": "nest build",
+    "start:prod": "node dist/main"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10",
+    "@nestjs/core": "^10",
+    "@nestjs/platform-express": "^10",
+    "@nestjs/swagger": "^7",
+    "@solana/web3.js": "^1",
+    "@solana/spl-token": "^0.3"
+  }
+}
